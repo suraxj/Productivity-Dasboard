@@ -1,5 +1,5 @@
 function openFeatures(){
-    var allElems = document.querySelectorAll('.elem')
+var allElems = document.querySelectorAll('.elem')
 var allFullElemPage = document.querySelectorAll('.fullElem')
 var allFullElemPgeBackBtn = document.querySelectorAll('.fullElem .back')
 
@@ -18,7 +18,7 @@ back.addEventListener('click',function(){
 openFeatures()
  
 function todoList (){
-    var currentTask = []
+var currentTask = []
 
  if(localStorage.getItem('currentTask')){
 
@@ -74,9 +74,9 @@ form.addEventListener('submit', function (e) {
   
  
 }
-// todoList()
+todoList()
 function dailyPlanner(){
-    var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData'))||{}
+var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData'))||{}
 
 var dayPlanner = document.querySelector('.day-planner')
 
@@ -85,7 +85,7 @@ var hours = Array.from({length:18},(_,idx) =>`${6+idx}:00 - ${7+idx}:00`)
 var wholeDaySum = ''
 hours.forEach(function(elem,idx){
 
-    var savedData = dayPlanData[idx]||''
+var savedData = dayPlanData[idx]||''
   wholeDaySum = wholeDaySum + ` <div class="day-planner-time">
                     <p>${elem}</p>
                     <input id=${idx} type="text" in placeholder="..." value = ${savedData}>
@@ -106,10 +106,10 @@ dayPlannerInput.forEach(function(elem){
     })
       })
 }
-// dailyPlanner()
+dailyPlanner()
 
 function motivationalQuote(){
-    var motivationQuoteContent = document.querySelector('.motivation-2 h1')
+var motivationQuoteContent = document.querySelector('.motivation-2 h1')
 var motivationAuthor = document.querySelector('.motivation-3 h2')
 
 async function fetchQuote(){
@@ -123,10 +123,11 @@ async function fetchQuote(){
 fetchQuote()
 
 }
-// motivationalQuote()
+motivationalQuote()
+
 
 function pomodoroTimer(){
-    let timer = document.querySelector('.pomo-timer h1')
+let timer = document.querySelector('.pomo-timer h1')
 var startBtn = document.querySelector('.pomo-timer .start-timer')
 var pauseBtn = document.querySelector('.pomo-timer .pause-timer')
 var resetBtn = document.querySelector('.pomo-timer .reset-timer')
@@ -193,7 +194,7 @@ startBtn.addEventListener('click', startTimer)
 pauseBtn.addEventListener('click', pauseTimer)
 resetBtn.addEventListener('click', resetTimer)
 }
-// pomodoroTimer()
+pomodoroTimer()
 
 function weatherFunctionality(){
 var apiKey = 'ca8c2af98d044559803175511252404'
@@ -252,6 +253,7 @@ setInterval(() =>{
 }
 weatherFunctionality()
 
+function changeTheme(){
 var theme = document.querySelector('.theme')
 var rootElement = document.documentElement
 var flag = 0
@@ -277,6 +279,8 @@ rootElement.style.setProperty('--tri2','#74512D')
 flag = 0
 }
 })
+}
+changeTheme()
 
 
 
